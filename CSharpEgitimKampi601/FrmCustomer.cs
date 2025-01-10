@@ -78,7 +78,7 @@ namespace CSharpEgitimKampi601
             int id = int.Parse(txtCustomerId.Text);
             var connnection = new NpgsqlConnection(connectionString);
             connnection.Open();
-            string query = "Update Customers Set CustomerName=@customerName, CustomerSurname=@customerSurname, CustomerCity=@customerCity where @CustomerId=@customerId";
+            string query = "Update Customers Set CustomerName=@customerName, CustomerSurname=@customerSurname, CustomerCity=@customerCity where CustomerId=@customerId";
             var command = new NpgsqlCommand(@query, connnection);
             command.Parameters.AddWithValue("@customerName", customerName);
             command.Parameters.AddWithValue("@customerSurname", customerSurname);
